@@ -7,12 +7,14 @@ import SolutionHero from "./SolutionHero";
 import CategoryHero from "./CategoryHero";
 import IGHero from "./IGHero";
 import FormHero from "./FormHero";
+import NewsHero from "./NewsHero";
 
 export default function Home() {
   return (
     <div>
       <HeroHome />
       <StatisticsHero />
+      <NewsHero />
       <CommentHero />
       <SolutionHero />
       <CategoryHero />
