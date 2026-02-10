@@ -8,7 +8,7 @@ export default function NewsHero() {
       title: "Alma Harmony 2025 GOOD DESIGN™ Ödülünü Kazandı",
       excerpt:
         "Alma Harmony, platformun THE 2025 GOOD DESIGN Awards'ı 'Sağlık ve Sağlıklı Yaşam' kategorisinde kazandığını duyurmaktan gurur duyuyor. Bu altın prestijli ödül, Harmony'nin estetik alanda yenilikçi tasarım ve teknolojik mükemmelliği temsil ettiğini onaylıyor.",
-      image: "public/HomeImages/x.png",
+      image: "/HomeImages/x.png",
       link: "#",
     },
     {
@@ -17,7 +17,7 @@ export default function NewsHero() {
       title: "BE THE AESTHETIC MOVEMENT.",
       description:
         "Alma Academy, tıp estetiği profesyonelleri için özel olarak tasarlanmış kapsamlı bir eğitim programıdır. Kurslarımız uygulamalı deneyim, düşünce liderliği ve yaratıcı işbirliğine odaklanır.",
-      image: "public/HomeImages/y.png",
+      image: "/HomeImages/y.png",
       link: "#",
       isDark: true,
     },
@@ -28,7 +28,7 @@ export default function NewsHero() {
         "'Best Laser for Fine Lines' ELLE 2025 Tweakments Ödülleri: Harmony Bio-Boost Taç Giyiyor",
       excerpt:
         "Harmony Bio-Boost tedavisinin 'Ince Çizgiler İçin En İyi Lazer' olarak ELLE 2025 Tweakments Ödüllerinde tanınmasından gurur duyuyoruz. Bu onur, Bio-Boost'un gelişmiş teknolojisinin cilt gençleştirmede lider olduğunu gösteriyor.",
-      image: "public/HomeImages/z.png",
+      image: "/HomeImages/z.png",
       link: "#",
     },
   ];

@@ -3,17 +3,17 @@ import { Instagram } from "lucide-react";
 export default function IGHero() {
   const posts = [
     {
-      image: "public/HomeImages/Ig1.png",
+      image: "/HomeImages/Ig1.png",
       isVideo: true,
       link: "#",
     },
     {
-      image: "public/HomeImages/Ig2.png",
+      image: "/HomeImages/Ig2.png",
       isVideo: true,
       link: "#",
     },
     {
-      image: "public/HomeImages/Ig3.png",
+      image: "/HomeImages/Ig3.png",
       isVideo: false,
       link: "#",
     },

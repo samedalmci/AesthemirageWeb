@@ -6,7 +6,7 @@ export default function CategoryHero() {
       title: "Ürünler",
       description:
         "İşinizi büyütmenize yardımcı olan bir cihazda en son yenilikler ve kanıtlanmış teknolojiler.",
-      image: "public/HomeImages/productImage.png",
+      image: "/HomeImages/productImage.png",
       link: "#products",
       overlay: "bg-black/60",
     },
@@ -14,7 +14,7 @@ export default function CategoryHero() {
       title: "Tedaviler",
       description:
         "Birden fazla endikasyon için güvenli, rahat ve uygun tedaviler.",
-      image: "public/HomeImages/treatmentsImage.png",
+      image: "/HomeImages/treatmentsImage.png",
       link: "#treatments",
       overlay: "bg-gray-700/50",
     },
@@ -22,7 +22,7 @@ export default function CategoryHero() {
       title: "Etkinlikler",
       description:
         "Nerede olduğumuz hakkında güncel kalın - sizinle tanışmayı çok isteriz!",
-      image: "public/HomeImages/akademImage.png",
+      image: "/HomeImages/akademImage.png",
       link: "#events",
       overlay: "bg-orange-900/40",
     },

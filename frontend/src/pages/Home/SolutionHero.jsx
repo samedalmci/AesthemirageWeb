@@ -17,28 +17,28 @@ export default function SolutionHero() {
         "Cilt gençleştirme, yüzey yenileme ve yara izlerinde yeni bir standart",
       description:
         "En üst düzey cilt tedavileri için Aesthemirage Hybrid, üç güçlü teknolojiyi ve ablative ve non-ablative dalga boylarının ikili lazer stratejisini tamamen özelleştirilebilir bir oranda bir araya getiriyor. Sınırsız seçenekler, benzersiz hassasiyet ve tam kontrol ile azaltılmış kesinti süresiyle eşsiz sonuçlar elde edebilirsiniz.",
-      image: "public/HomeImages/bakımImage.png",
+      image: "/HomeImages/bakımImage.png",
     },
     body: {
       title: "Vücut Şekillendirme Çözümleri",
       subtitle: "Modern vücut konturlama ve sıkılaştırma teknolojileri",
       description:
         "Vücut şekillendirme ve cildi sıkılaştırma için en gelişmiş teknolojileri sunuyoruz. Non-invaziv yöntemlerle istediğiniz vücut hatlarına kavuşun.",
-      image: "public/HomeImages/bodyImage.png",
+      image: "/HomeImages/bodyImage.png",
     },
     hair: {
       title: "Saç Tedavileri",
       subtitle: "Saç dökülmesi ve saç bakımı için etkili çözümler",
       description:
         "En son saç tedavi teknolojileri ile saç dökülmesini durdurun ve sağlıklı saçlara kavuşun. Klinik olarak kanıtlanmış sonuçlar.",
-      image: "public/HomeImages/estetikImage.png",
+      image: "/HomeImages/estetikImage.png",
     },
     wellness: {
       title: "Cinsel Sağlık",
       subtitle: "Gizlilik ve profesyonellikle cinsel sağlık çözümleri",
       description:
         "En yeni teknolojiler ile cinsel sağlık ve yaşam kalitenizi artırın. Güvenli ve etkili tedavi seçenekleri.",
-      image: "public/HomeImages/sacImage.png",
+      image: "/HomeImages/sacImage.png",
     },
   };
 
@@ -122,7 +122,7 @@ export default function SolutionHero() {
               {/* Image */}
               <div className="h-full min-h-[400px] rounded-2xl">
                 <img
-                  src="public/HomeImages/mapImage.png"
+                  src="/HomeImages/mapImage.png"
                   alt={content[activeTab].title}
                   className="w-full h-full object-cover"
                 />
