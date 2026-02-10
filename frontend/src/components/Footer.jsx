@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <span>
                 <img
-                  src="src/assets/icon.png"
+                  src="/icon.png"
                   alt="react Logo"
                   className="h-30 w-30 object-contain"
                 />

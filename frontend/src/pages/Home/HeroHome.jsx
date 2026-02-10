@@ -4,7 +4,7 @@ export function HeroHome() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="src/assets/hero.jpg"
+          src="/hero.jpg"
           alt="Guzellik klinigi"
           className="w-full h-full object-cover"
         />

@@ -20,7 +20,7 @@ export default function Navbar() {
         <nav className="flex items-center justify-between px-6 py-3 lg:px-12">
           <a href="/" className="flex items-center gap-3 group">
             <img
-              src="src/assets/icon.png"
+              src="/icon.png"
               alt="Aesthemirage Logo"
               className="h-20 w-20 object-contain rounded-full border border-white/10 shadow-sm transition-transform group-hover:scale-105"
             />
@@ -138,7 +138,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between p-6 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <img
-                    src="src/assets/icon.png"
+                    src="/icon.png"
                     alt="Logo"
                     className="h-12 w-12 rounded-full"
                   />
