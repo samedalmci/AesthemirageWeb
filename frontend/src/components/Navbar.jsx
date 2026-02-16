@@ -87,7 +87,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <button className="hidden lg:block bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-md font-medium transition-colors">
+          <button className="hidden lg:block bg-gold-500 hover:bg-amber-400 text-white px-6 py-2 rounded-md font-medium transition-colors">
             Iletisim
           </button>
 

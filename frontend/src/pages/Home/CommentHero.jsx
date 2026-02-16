@@ -41,7 +41,7 @@ export default function CommentHero() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 border-2 border-amber-200 hover:border-amber-300 transition-all duration-300 hover:shadow-lg"
+              className="bg-white rounded-2xl p-8 border-3 border-amber-400 hover:border-amber-500 transition-all duration-300 hover:shadow-lg"
             >
               {/* Quote */}
               <p className="text-gray-800 font-medium text-base leading-relaxed mb-8">
@@ -76,7 +76,7 @@ export default function CommentHero() {
 
         {/* Success Stories Button */}
         <div className="text-center">
-          <button className="bg-purple-900 hover:bg-purple-800 text-white font-semibold px-10 py-3.5 rounded-full transition-colors text-base">
+          <button className="bg-amber-500 hover:bg-amber-400 text-white font-semibold px-10 py-3.5 rounded-full transition-colors text-base">
             Başarı Hikayeleri
           </button>
         </div>
