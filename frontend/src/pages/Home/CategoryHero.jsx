@@ -8,7 +8,6 @@ export default function CategoryHero() {
         "İşinizi büyütmenize yardımcı olan bir cihazda en son yenilikler ve kanıtlanmış teknolojiler.",
       image: "/HomeImages/productImage.png",
       link: "#products",
-      overlay: "bg-black/60",
     },
     {
       title: "Tedaviler",
@@ -16,7 +15,6 @@ export default function CategoryHero() {
         "Birden fazla endikasyon için güvenli, rahat ve uygun tedaviler.",
       image: "/HomeImages/treatmentsImage.png",
       link: "#treatments",
-      overlay: "bg-gray-700/50",
     },
     {
       title: "Etkinlikler",
@@ -24,55 +22,71 @@ export default function CategoryHero() {
         "Nerede olduğumuz hakkında güncel kalın - sizinle tanışmayı çok isteriz!",
       image: "/HomeImages/akademImage.png",
       link: "#events",
-      overlay: "bg-orange-900/40",
     },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-light text-gray-900">
-            İlginizi Çekebilir...
-          </h2>
-        </div>
+    <section className="py-50 bg-white">
+      {/* Başlık */}
+      <div className="mb-12 text-center pb-9" style={{ paddingLeft: "96px" }}>
+        <h2
+          className="font-serif font-light text-navy-700"
+          style={{ fontSize: "2.5rem" }}
+        >
+          İlginizi Çekebilir...
+        </h2>
+      </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {items.map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-80"
-            >
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className={`absolute inset-0 ${item.overlay}`} />
+      {/* Kartlar */}
+      <div
+        className="grid grid-cols-3 gap-6"
+        style={{ paddingLeft: "96px", paddingRight: "96px" }}
+      >
+        {items.map((item, index) => (
+          <a
+            key={index}
+            href={item.link}
+            className="group relative overflow-hidden rounded-2xl cursor-pointer block"
+            style={{ aspectRatio: "16/10" }}
+          >
+            {/* Arka plan görseli */}
+            <img
+              src={item.image}
+              alt={item.title}
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
+
+            {/* Gradient overlay */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.05) 100%)",
+              }}
+            />
+
+            {/* İçerik */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3
+                className="font-sans font-bold mb-2"
+                style={{ fontSize: "1.35rem" }}
+              >
+                {item.title}
+              </h3>
+              <p
+                className="text-gray-200 mb-4"
+                style={{ fontSize: "0.875rem", lineHeight: "1.6" }}
+              >
+                {item.description}
+              </p>
+
+              {/* Ok ikonu */}
+              <div className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center transition-all duration-300 group-hover:bg-white">
+                <ArrowRight className="w-4 h-4 transition-colors duration-300 group-hover:text-gray-900" />
               </div>
-
-              {/* Content */}
-              <div className="relative h-full flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl font-bold mb-3 group-hover:translate-x-2 transition-transform duration-300">
-                  {item.title}
-                </h3>
-                <p className="text-base leading-relaxed mb-4 opacity-90">
-                  {item.description}
-                </p>
-
-                {/* Arrow Icon */}
-                <div className="flex items-center gap-2 text-white group-hover:gap-4 transition-all duration-300">
-                  <ArrowRight className="w-6 h-6" />
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );

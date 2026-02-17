@@ -66,24 +66,32 @@ export default function SolutionHero() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-5 font-sans font-bold tracking-normal transition-all relative ${
+              className={`flex-1 py-5 font-sans font-bold tracking-normal transition-all relative group ${
                 activeTab === tab.id
-                  ? "text-navy-700"
-                  : "text-gray-400 hover:text-gray-600"
+                  ? "text-gold-200"
+                  : "text-navy-700 hover:text-gold-200"
               }`}
               style={{ fontSize: "1.15rem" }}
             >
               {tab.label}
 
+              {/* Normal çizgi */}
               <div
                 className="absolute bottom-0 left-4 right-4 h-[1px]"
-                style={{ backgroundColor: "#d1d5db" }}
+                style={{ backgroundColor: "var(--color-navy-700)" }}
               />
 
+              {/* Hover çizgisi */}
+              <div
+                className="absolute bottom-0 left-4 right-4 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ backgroundColor: "var(--color-gold-200)" }}
+              />
+
+              {/* Active çizgisi */}
               {activeTab === tab.id && (
                 <div
                   className="absolute bottom-0 left-4 right-4 h-[3px]"
-                  style={{ backgroundColor: "#c9a84c" }}
+                  style={{ backgroundColor: "var(--color-gold-200)" }}
                 />
               )}
             </button>

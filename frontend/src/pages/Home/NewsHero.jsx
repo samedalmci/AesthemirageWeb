@@ -72,7 +72,7 @@ export default function NewsHero() {
                 {/* Title */}
                 <h2
                   className={`text-4xl md:text-5xl font-bold mb-6 leading-tight tracking-tight ${
-                    item.isDark ? "text-amber-100" : "text-[#2d1f5e]"
+                    item.isDark ? "text-amber-100" : "text-navy-700"
                   }`}
                 >
                   {item.title}
@@ -92,8 +92,8 @@ export default function NewsHero() {
                   href={item.link}
                   className={`inline-flex items-center gap-3 px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 group ${
                     item.isDark
-                      ? "bg-amber-400 hover:bg-amber-300 text-[#1a1f2e]"
-                      : "bg-[#2d1f5e] hover:bg-[#3d2a7e] text-white"
+                      ? "bg-amber-400 hover:bg-amber-300 text-navy-700"
+                      : "bg-navy-800 hover:bg-navy-700 text-white"
                   }`}
                 >
                   <span>Read More</span>

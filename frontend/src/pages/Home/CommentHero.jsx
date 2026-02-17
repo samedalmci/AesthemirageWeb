@@ -31,7 +31,7 @@ export default function CommentHero() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-light text-gray-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-navy-700 mb-3">
             Güzellik & İş
           </h2>
         </div>
@@ -44,7 +44,7 @@ export default function CommentHero() {
               className="bg-white rounded-2xl p-8 border-3 border-gold-100 hover:border-gold-200 transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
             >
               {/* Quote — büyük ve bold, görseldeki gibi */}
-              <p className="text-gray-800 font-bold text-2xl leading-snug mb-8">
+              <p className="text-navy-700 font-bold text-2xl leading-snug mb-8">
                 "{testimonial.quote}"
               </p>
 
@@ -52,16 +52,16 @@ export default function CommentHero() {
                 {/* Author Info */}
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0">
-                    <span className="text-gray-700 font-bold text-sm">
+                    <span className="text-navy-700 font-bold text-sm">
                       {testimonial.initials}
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 text-base">
+                    <h4 className="font-bold text-navy-700 text-base">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-gray-600">{testimonial.title}</p>
-                    <p className="text-sm font-bold text-gray-900">
+                    <p className="text-sm text-navy-700">{testimonial.title}</p>
+                    <p className="text-sm font-bold text-navy-700">
                       - {testimonial.location}
                     </p>
                   </div>

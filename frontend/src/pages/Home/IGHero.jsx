@@ -20,11 +20,11 @@ export default function IGHero() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-purple-900 to-purple-800">
+    <section className="py-20 bg-gradient-to-b from-navy-700 to-navy-700">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif font-light text-gold-100 mb-2">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-gold-200 mb-2">
             Instagram'ımıza Göz Atın
           </h2>
         </div>
@@ -51,7 +51,7 @@ export default function IGHero() {
                 <div className="absolute top-4 right-4">
                   <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-4 h-4 text-purple-900 ml-0.5"
+                      className="w-4 h-4 text-gold-200 ml-0.5"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
