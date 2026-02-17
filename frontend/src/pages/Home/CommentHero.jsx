@@ -41,42 +41,44 @@ export default function CommentHero() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 border-3 border-amber-400 hover:border-amber-500 transition-all duration-300 hover:shadow-lg"
+              className="bg-white rounded-2xl p-8 border-3 border-gold-100 hover:border-gold-200 transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
             >
-              {/* Quote */}
-              <p className="text-gray-800 font-medium text-base leading-relaxed mb-8">
+              {/* Quote — büyük ve bold, görseldeki gibi */}
+              <p className="text-gray-800 font-bold text-2xl leading-snug mb-8">
                 "{testimonial.quote}"
               </p>
 
-              {/* Author Info */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-amber-200 flex items-center justify-center">
-                  <span className="text-gray-700 font-bold text-sm">
-                    {testimonial.initials}
-                  </span>
+              <div>
+                {/* Author Info */}
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-gray-700 font-bold text-sm">
+                      {testimonial.initials}
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-base">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-gray-600">{testimonial.title}</p>
+                    <p className="text-sm font-bold text-gray-900">
+                      - {testimonial.location}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 text-base">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-gray-600">{testimonial.title}</p>
-                  <p className="text-sm font-bold text-gray-900">
-                    - {testimonial.location}
-                  </p>
-                </div>
-              </div>
 
-              {/* Read More Button */}
-              <button className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold px-6 py-2.5 rounded-full transition-colors text-sm">
-                Devamını Oku
-              </button>
+                {/* Read More Button */}
+                <button className="bg-gold-100 hover:bg-gold-200 text-gray-900 font-semibold px-6 py-2.5 rounded-full transition-colors text-sm">
+                  Devamını Oku
+                </button>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Success Stories Button */}
         <div className="text-center">
-          <button className="bg-amber-500 hover:bg-amber-400 text-white font-semibold px-10 py-3.5 rounded-full transition-colors text-base">
+          <button className="bg-navy-800 hover:bg-navy-700 text-gold-100 font-semibold px-10 py-3.5 rounded-full transition-colors text-base">
             Başarı Hikayeleri
           </button>
         </div>

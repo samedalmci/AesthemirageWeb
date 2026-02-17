@@ -24,7 +24,7 @@ export default function IGHero() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif font-light text-amber-300 mb-2">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-gold-100 mb-2">
             Instagram'ımıza Göz Atın
           </h2>
         </div>
@@ -62,7 +62,7 @@ export default function IGHero() {
               )}
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-purple-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gold-100/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <Instagram className="w-12 h-12 text-white" />
               </div>
             </a>
@@ -75,7 +75,7 @@ export default function IGHero() {
             href="https://instagram.com/yourprofile"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white hover:text-amber-300 transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-white hover:text-gold-200 transition-colors font-medium"
           >
             <Instagram className="w-5 h-5" />
             <span>Instagram'da Görüntüle</span>

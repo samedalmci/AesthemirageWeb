@@ -87,8 +87,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          <button className="hidden lg:block bg-gold-500 hover:bg-amber-400 text-white px-6 py-2 rounded-md font-medium transition-colors">
-            Iletisim
+          <button className="hidden lg:block bg-gold-100 hover:bg-gold-200 text-white px-6 py-2 rounded-md font-medium transition-colors">
+            İletişim
           </button>
 
           {/* Hamburger Butonu */}
@@ -168,7 +168,7 @@ export default function Navbar() {
 
               {/* Menu Linkleri - Sırayla Gelme (Stagger) */}
               <div className="p-8 flex flex-col gap-y-6">
-                {["Klinikler", "Hizmetler", "Etkinlikler", "Iletisim"].map(
+                {["Klinikler", "Hizmetler", "Etkinlikler", "İletişim"].map(
                   (text, i) => (
                     <motion.a
                       key={text}
@@ -176,7 +176,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 * i }} // Sırayla gelme efekti
                       href={`#${text.toLowerCase()}`}
-                      className={`text-xl font-light ${text === "Iletisim" ? "text-amber-400" : "text-white/90"}`}
+                      className={`text-xl font-light ${text === "İletişim" ? "text-gold-100" : "text-white/90"}`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {text}

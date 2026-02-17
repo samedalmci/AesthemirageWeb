@@ -42,101 +42,134 @@ export default function SolutionHero() {
     },
   };
 
+  const SIDE_MARGIN = "96px";
+
   return (
     <>
-      {/* Treatment Solutions Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-serif font-light text-gray-900">
-              Her Tedavi İçin Doğru Çözüm
-            </h2>
-          </div>
+      <section className="bg-gray-50 py-20">
+        {/* Section Title */}
+        <div className="text-center mb-14 px-4">
+          <h2
+            className="font-serif font-light text-gray-900"
+            style={{ fontSize: "2.5rem", lineHeight: "1.2" }}
+          >
+            Her Tedavi İçin Doğru Çözüm
+          </h2>
+        </div>
 
-          {/* Tabs */}
-          <div className="flex justify-center mb-8 border-b border-gray-200">
-            <div className="flex gap-8 max-w-4xl">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`pb-4 px-4 text-base font-medium transition-all relative ${
-                    activeTab === tab.id
-                      ? "text-gray-900"
-                      : "text-gray-400 hover:text-gray-600"
-                  }`}
-                >
-                  {tab.label}
-                  {activeTab === tab.id && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-900" />
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Tabs */}
+        <div
+          className="flex"
+          style={{ paddingLeft: SIDE_MARGIN, paddingRight: SIDE_MARGIN }}
+        >
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex-1 py-5 font-sans font-bold tracking-normal transition-all relative ${
+                activeTab === tab.id
+                  ? "text-navy-700"
+                  : "text-gray-400 hover:text-gray-600"
+              }`}
+              style={{ fontSize: "1.15rem" }}
+            >
+              {tab.label}
+
+              <div
+                className="absolute bottom-0 left-4 right-4 h-[1px]"
+                style={{ backgroundColor: "#d1d5db" }}
+              />
+
+              {activeTab === tab.id && (
+                <div
+                  className="absolute bottom-0 left-4 right-4 h-[3px]"
+                  style={{ backgroundColor: "#c9a84c" }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
+
+        <div className="h-10" />
+
+        {/* Hero Card */}
+        <div
+          className="relative overflow-hidden rounded-2xl"
+          style={{
+            height: "680px",
+            marginLeft: SIDE_MARGIN,
+            marginRight: SIDE_MARGIN,
+          }}
+        >
+          {/* Background Image */}
+          <img
+            src={content[activeTab].image}
+            alt={content[activeTab].title}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+
+          {/* Gradient Overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, #1a1530 0%, #1a1530 42%, rgba(26,21,48,0.75) 58%, rgba(26,21,48,0.25) 72%, transparent 100%)",
+            }}
+          />
 
           {/* Content */}
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-gradient-to-r from-gray-800 to-gray-700 rounded-3xl overflow-hidden">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                {/* Text Content */}
-                <div className="p-12 text-white">
-                  <h3 className="text-3xl md:text-4xl font-light mb-4 text-amber-300">
-                    {content[activeTab].title}
-                  </h3>
-                  <p className="text-lg font-medium mb-6 text-gray-200">
-                    {content[activeTab].subtitle}
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mb-8">
-                    {content[activeTab].description}
-                  </p>
-                  <div className="flex gap-4">
-                    <button className="bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
-                      Daha Fazla Bilgi
-                    </button>
-                    <button className="text-white border-b-2 border-white hover:border-amber-300 transition-colors font-medium">
-                      Tüm Ürünleri Keşfet
-                    </button>
-                  </div>
-                </div>
-                {/* Image */}
-                <div className="h-full min-h-[400px] bg-gray-600">
-                  <img
-                    src={content[activeTab].image}
-                    alt={content[activeTab].title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div
+            className="relative z-10 h-full flex flex-col justify-center"
+            style={{
+              paddingLeft: "72px",
+              paddingRight: "24px",
+              maxWidth: "640px",
+            }}
+          >
+            {/* Title */}
+            <h3
+              className="font-serif font-bold mb-6"
+              style={{
+                fontSize: "2.4rem",
+                lineHeight: "1.2",
+                color: "#c9a84c",
+              }}
+            >
+              {content[activeTab].title}
+            </h3>
 
-      {/* Contact Map Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Image */}
-              <div className="h-full min-h-[400px] rounded-2xl">
-                <img
-                  src="/HomeImages/mapImage.png"
-                  alt={content[activeTab].title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Contact Text */}
-              <div>
-                <h3 className="text-3xl md:text-4xl font-serif font-light text-gray-900 mb-6 leading-tight">
-                  Bizimle iletişime geçin, mükemmel eşleşmenizi bulmanıza
-                  yardımcı olmaktan mutluluk duyarız
-                </h3>
-                <button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3.5 rounded-full font-medium transition-colors">
-                  İletişime Geç
-                </button>
-              </div>
+            {/* Subtitle */}
+            <p
+              className="font-sans font-semibold text-white mb-6"
+              style={{
+                fontSize: "1.1rem",
+                lineHeight: "1.5",
+              }}
+            >
+              {content[activeTab].subtitle}
+            </p>
+
+            {/* Description */}
+            <p
+              className="font-sans text-gray-300 mb-10"
+              style={{
+                fontSize: "1rem",
+                lineHeight: "1.75",
+                maxWidth: "520px",
+              }}
+            >
+              {content[activeTab].description}
+            </p>
+
+            {/* Buttons */}
+            <div className="flex items-center gap-10">
+              <button className="bg-white text-gray-900 font-sans font-semibold rounded-full hover:bg-gray-100 transition-colors px-8 py-3">
+                Daha Fazla Bilgi
+              </button>
+
+              <button className="text-white font-sans font-medium underline underline-offset-4 hover:opacity-75 transition-opacity">
+                Tüm Ürünleri Keşfet
+              </button>
             </div>
           </div>
         </div>

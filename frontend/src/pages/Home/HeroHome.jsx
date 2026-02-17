@@ -29,7 +29,7 @@ export function HeroHome() {
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button className="bg-amber-500 hover:bg-amber-600 text-white h-14 px-10 text-base font-medium rounded-md transition-colors">
+            <button className="bg-gold-100 hover:bg-gold-200 text-white h-14 px-10 text-base font-medium rounded-md transition-colors">
               Klinikleri Kesfet
             </button>
             <button className="border border-white text-white hover:bg-white/10 h-14 px-10 text-base font-medium rounded-md transition-colors bg-transparent">

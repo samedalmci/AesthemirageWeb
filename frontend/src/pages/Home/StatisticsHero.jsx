@@ -16,7 +16,7 @@ export default function StatisticsHero() {
       value: "25",
       suffix: "",
       detail: "Premium network durumu",
-      detailColor: "text-violet-600",
+      detailColor: "text-gold-100",
     },
     {
       icon: Heart,
@@ -32,7 +32,7 @@ export default function StatisticsHero() {
       value: "12",
       suffix: "",
       detail: "Gelişmiş sertifikasyonlar",
-      detailColor: "text-violet-600",
+      detailColor: "text-gold-100",
     },
     {
       icon: Calendar,
@@ -40,7 +40,7 @@ export default function StatisticsHero() {
       value: "10",
       suffix: "+",
       detail: "Köklü pazar lideri",
-      detailColor: "text-violet-600",
+      detailColor: "text-gold-100",
     },
   ];
 
@@ -53,7 +53,7 @@ export default function StatisticsHero() {
             Premium
           </p>
           <h2 className="text-4xl md:text-5xl font-serif font-light text-gray-900 mb-3">
-            <span className="text-violet-600">İstatistikler</span>
+            <span className="text-gold-100">İstatistikler</span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
             Platform performansı & global erişim
@@ -72,7 +72,7 @@ export default function StatisticsHero() {
                 {/* Icon */}
                 <div className="mb-5">
                   <div className="w-12 h-12 rounded-xl bg-violet-50 flex items-center justify-center group-hover:bg-violet-100 transition-colors">
-                    <Icon className="w-6 h-6 text-violet-600" />
+                    <Icon className="w-6 h-6 text-gold-100" />
                   </div>
                 </div>
 
@@ -84,7 +84,7 @@ export default function StatisticsHero() {
                 {/* Value */}
                 <h3 className="text-4xl font-bold text-gray-900 mb-3">
                   {stat.value}
-                  <span className="text-violet-600">{stat.suffix}</span>
+                  <span className="text-gold-100">{stat.suffix}</span>
                 </h3>
 
                 {/* Detail */}
