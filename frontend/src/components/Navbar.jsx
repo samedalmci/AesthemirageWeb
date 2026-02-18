@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Scroll kontrolü
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      // Yukarı scroll - navbar göster
+      if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+      // Aşağı scroll - navbar gizle (50px'den sonra)
+      else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
 
   // Mobil menü açıkken scroll'u engelle
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
@@ -16,7 +39,12 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 right-0 z-50 bg-neutral-800/60 backdrop-blur-sm">
+      <motion.header
+        initial={{ y: 0 }}
+        animate={{ y: isVisible ? 0 : "-100%" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="fixed top-0 left-0 right-0 z-50 bg-neutral-800/60 backdrop-blur-sm"
+      >
         <nav className="flex items-center justify-between px-6 py-3 lg:px-12">
           <a href="/" className="flex items-center gap-3 group">
             <img
@@ -111,7 +139,7 @@ export default function Navbar() {
             </svg>
           </button>
         </nav>
-      </header>
+      </motion.header>
 
       {/* ANİMASYONLU MOBİL MENÜ */}
       <AnimatePresence>
@@ -128,9 +156,9 @@ export default function Navbar() {
 
             {/* Menu Panel - Sağdan Kayarak Gelme */}
             <motion.div
-              initial={{ x: "100%" }} // Sağdan başla
-              animate={{ x: 0 }} // Ekrana gir
-              exit={{ x: "100%" }} // Sağdan çık
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="absolute top-0 right-0 bottom-0 w-80 bg-gradient-to-b from-neutral-900 to-neutral-800 shadow-2xl flex flex-col"
             >
@@ -174,7 +202,7 @@ export default function Navbar() {
                       key={text}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 * i }} // Sırayla gelme efekti
+                      transition={{ delay: 0.1 * i }}
                       href={`#${text.toLowerCase()}`}
                       className={`text-xl font-light ${text === "İletişim" ? "text-gold-100" : "text-white/90"}`}
                       onClick={() => setIsMobileMenuOpen(false)}

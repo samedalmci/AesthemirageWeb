@@ -106,10 +106,10 @@ export default function NewsHero() {
             <div
               className={`flex-1 flex items-center justify-center p-10 ${
                 isReversed ? "md:order-1" : "md:order-2"
-              } ${item.isDark ? "bg-[#1a1f2e]" : "bg-gray-50"}`}
+              } ${item.isDark ? "bg-[#1a1f2e]" : "bg-white"}`}
             >
               {/* Rounded image card — matching screenshot style */}
-              <div className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <div className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl aspect-square">
                 <img
                   src={item.image}
                   alt={item.title}

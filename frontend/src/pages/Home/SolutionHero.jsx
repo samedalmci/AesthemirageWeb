@@ -42,73 +42,58 @@ export default function SolutionHero() {
     },
   };
 
-  const SIDE_MARGIN = "96px";
-
   return (
-    <>
-      <section className="bg-gray-50 py-20">
-        {/* Section Title */}
-        <div className="text-center mb-14 px-4">
-          <h2
-            className="font-serif font-light text-gray-900"
-            style={{ fontSize: "2.5rem", lineHeight: "1.2" }}
-          >
-            Her Tedavi İçin Doğru Çözüm
-          </h2>
-        </div>
+    <section className="bg-gray-50 py-12 md:py-20">
+      {/* Section Title */}
+      <div className="text-center mb-8 md:mb-14 px-4">
+        <h2 className="font-serif font-light text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight">
+          Her Tedavi İçin Doğru Çözüm
+        </h2>
+      </div>
 
-        {/* Tabs */}
-        <div
-          className="flex"
-          style={{ paddingLeft: SIDE_MARGIN, paddingRight: SIDE_MARGIN }}
-        >
+      {/* Tabs - Mobile: Scroll, Desktop: Flex */}
+      <div className="px-4 md:px-8 lg:px-24 mb-6 md:mb-10">
+        <div className="flex overflow-x-auto gap-2 md:gap-0 scrollbar-hide">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-5 font-sans font-bold tracking-normal transition-all relative group ${
+              className={`flex-shrink-0 md:flex-1 py-4 px-6 md:px-4 font-sans font-bold tracking-normal transition-all relative group whitespace-nowrap ${
                 activeTab === tab.id
                   ? "text-gold-200"
                   : "text-navy-700 hover:text-gold-200"
               }`}
-              style={{ fontSize: "1.15rem" }}
+              style={{ fontSize: "0.95rem" }}
             >
               {tab.label}
 
               {/* Normal çizgi */}
               <div
-                className="absolute bottom-0 left-4 right-4 h-[1px]"
+                className="absolute bottom-0 left-2 right-2 md:left-4 md:right-4 h-[1px]"
                 style={{ backgroundColor: "var(--color-navy-700)" }}
               />
 
               {/* Hover çizgisi */}
               <div
-                className="absolute bottom-0 left-4 right-4 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute bottom-0 left-2 right-2 md:left-4 md:right-4 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity"
                 style={{ backgroundColor: "var(--color-gold-200)" }}
               />
 
               {/* Active çizgisi */}
               {activeTab === tab.id && (
                 <div
-                  className="absolute bottom-0 left-4 right-4 h-[3px]"
+                  className="absolute bottom-0 left-2 right-2 md:left-4 md:right-4 h-[3px]"
                   style={{ backgroundColor: "var(--color-gold-200)" }}
                 />
               )}
             </button>
           ))}
         </div>
+      </div>
 
-        <div className="h-10" />
-
-        {/* Hero Card */}
-        <div
-          className="relative overflow-hidden rounded-2xl"
-          style={{
-            height: "680px",
-            marginLeft: SIDE_MARGIN,
-            marginRight: SIDE_MARGIN,
-          }}
-        >
+      {/* Hero Card */}
+      <div className="px-4 md:px-8 lg:px-24">
+        <div className="relative overflow-hidden rounded-xl md:rounded-2xl h-[500px] md:h-[600px] lg:h-[680px]">
           {/* Background Image */}
           <img
             src={content[activeTab].image}
@@ -116,9 +101,18 @@ export default function SolutionHero() {
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
 
-          {/* Gradient Overlay */}
+          {/* Gradient Overlay - Mobile: Stronger */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 md:hidden"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(26,21,48,0.3) 0%, rgba(26,21,48,0.85) 60%, rgba(26,21,48,0.95) 100%)",
+            }}
+          />
+
+          {/* Gradient Overlay - Desktop */}
+          <div
+            className="absolute inset-0 hidden md:block"
             style={{
               background:
                 "linear-gradient(to right, #1a1530 0%, #1a1530 42%, rgba(26,21,48,0.75) 58%, rgba(26,21,48,0.25) 72%, transparent 100%)",
@@ -126,62 +120,35 @@ export default function SolutionHero() {
           />
 
           {/* Content */}
-          <div
-            className="relative z-10 h-full flex flex-col justify-center"
-            style={{
-              paddingLeft: "72px",
-              paddingRight: "24px",
-              maxWidth: "640px",
-            }}
-          >
+          <div className="relative z-10 h-full flex flex-col justify-end md:justify-center px-6 py-8 md:px-12 lg:px-16 md:max-w-2xl">
             {/* Title */}
-            <h3
-              className="font-serif font-bold mb-6"
-              style={{
-                fontSize: "2.4rem",
-                lineHeight: "1.2",
-                color: "#c9a84c",
-              }}
-            >
+            <h3 className="font-serif font-bold mb-4 md:mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight text-gold-200">
               {content[activeTab].title}
             </h3>
 
             {/* Subtitle */}
-            <p
-              className="font-sans font-semibold text-white mb-6"
-              style={{
-                fontSize: "1.1rem",
-                lineHeight: "1.5",
-              }}
-            >
+            <p className="font-sans font-semibold text-white mb-4 md:mb-6 text-base md:text-lg lg:text-xl leading-relaxed">
               {content[activeTab].subtitle}
             </p>
 
             {/* Description */}
-            <p
-              className="font-sans text-gray-300 mb-10"
-              style={{
-                fontSize: "1rem",
-                lineHeight: "1.75",
-                maxWidth: "520px",
-              }}
-            >
+            <p className="font-sans text-gray-300 mb-6 md:mb-10 text-sm md:text-base leading-relaxed md:max-w-xl">
               {content[activeTab].description}
             </p>
 
-            {/* Buttons */}
-            <div className="flex items-center gap-10">
-              <button className="bg-white text-gray-900 font-sans font-semibold rounded-full hover:bg-gray-100 transition-colors px-8 py-3">
+            {/* Buttons - Mobile: Stack, Desktop: Row */}
+            <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-10">
+              <button className="bg-white text-gray-900 font-sans font-semibold rounded-full hover:bg-gray-100 transition-colors px-6 py-3 text-center">
                 Daha Fazla Bilgi
               </button>
 
-              <button className="text-white font-sans font-medium underline underline-offset-4 hover:opacity-75 transition-opacity">
+              <button className="text-white font-sans font-medium underline underline-offset-4 hover:opacity-75 transition-opacity text-center md:text-left">
                 Tüm Ürünleri Keşfet
               </button>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
