@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isEventsOpen, setIsEventsOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -115,6 +116,85 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Giriş Dropdown */}
+          <div
+            className="hidden lg:flex relative py-2"
+            onMouseEnter={() => setIsLoginOpen(true)}
+            onMouseLeave={() => setIsLoginOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white transition-colors">
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              Giriş
+              <svg
+                className={`h-4 w-4 transition-transform ${isLoginOpen ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {isLoginOpen && (
+              <div className="absolute top-full left-0 mt-0 w-48 bg-neutral-900 border border-white/10 rounded-md shadow-xl py-2">
+                <a
+                  href="/doktor-giris"
+                  className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-neutral-800 transition-colors"
+                >
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    />
+                  </svg>
+                  Doktor Girişi
+                </a>
+                <a
+                  href="/giris"
+                  className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-neutral-800 transition-colors"
+                >
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                  Hasta Girişi
+                </a>
+              </div>
+            )}
+          </div>
+
           <button className="hidden lg:block bg-gold-100 hover:bg-gold-200 text-white px-6 py-2 rounded-md font-medium transition-colors">
             İletişim
           </button>
@@ -195,7 +275,7 @@ export default function Navbar() {
               </div>
 
               {/* Menu Linkleri - Sırayla Gelme (Stagger) */}
-              <div className="p-8 flex flex-col gap-y-6">
+              <div className="p-8 flex flex-col gap-y-6 flex-1">
                 {["Klinikler", "Hizmetler", "Etkinlikler", "İletişim"].map(
                   (text, i) => (
                     <motion.a
@@ -213,12 +293,53 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Alt Buton */}
-              <div className="mt-auto p-6 border-t border-white/10">
-                <button className="w-full bg-white text-neutral-900 px-6 py-4 rounded-full font-bold hover:bg-amber-500 hover:text-white transition-all">
-                  Contact Us
-                </button>
+              {/* Mobil Giriş Butonları */}
+              <div className="p-6 border-t border-white/10 flex flex-col gap-3">
+                <div className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-2">
+                  Giriş Seçeneği
+                </div>
+                <a
+                  href="/doktor-giris"
+                  className="flex items-center gap-3 px-4 py-3 text-white bg-white/10 rounded-lg font-medium hover:bg-white/20 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <svg
+                    className="h-5 w-5 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    />
+                  </svg>
+                  Doktor Girişi
+                </a>
+                <a
+                  href="/giris"
+                  className="flex items-center gap-3 px-4 py-3 text-white bg-gold-100 hover:bg-gold-200 rounded-lg font-medium transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <svg
+                    className="h-5 w-5 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                  Hasta Girişi
+                </a>
               </div>
+
             </motion.div>
           </div>
         )}
