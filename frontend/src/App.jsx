@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home/Home.jsx";
 import DoctorLogin from "./pages/DoctorLogin.jsx";
+import UserLogin from "./pages/UserLogin.jsx";
 
 export default function App() {
   return (
@@ -25,6 +26,15 @@ export default function App() {
           element={
             <>
               <DoctorLogin />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/giris"
+          element={
+            <>
+              <UserLogin />
               <Footer />
             </>
           }
