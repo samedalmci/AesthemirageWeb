@@ -11,7 +11,7 @@ export default function StatisticsHero() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-stone-800 to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-[#1a1f2e] to-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
 
