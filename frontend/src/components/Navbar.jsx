@@ -64,22 +64,47 @@ export default function Navbar() {
           {/* Masaüstü Menü */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-8">
             <a
-              href="#klinikler"
+              href="#akademi"
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
-              Klinikler
+              Akademi
             </a>
             <a
-              href="#hizmetler"
+              href="#etkinlikler"
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
-              Hizmetler
+              Etkinlikler
+            </a>
+            <a
+              href="#blog"
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+            >
+              Blog
+            </a>
+            <a
+              href="#hakkimizda"
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+            >
+              Hakkımızda
+            </a>
+            <a
+              href="/specialist-showcase"
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+            >
+              X Doktoru
+            </a>
+            <a
+              href="/find-specialist"
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+            >
+              Uzman Bul
             </a>
 
             <div
               className="relative py-2"
               onMouseEnter={() => setIsEventsOpen(true)}
               onMouseLeave={() => setIsEventsOpen(false)}
+              style={{ display: "none" }}
             >
               <button className="flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white transition-colors">
                 Etkinlikler
@@ -276,21 +301,32 @@ export default function Navbar() {
 
               {/* Menu Linkleri - Sırayla Gelme (Stagger) */}
               <div className="p-8 flex flex-col gap-y-6 flex-1">
-                {["Klinikler", "Hizmetler", "Etkinlikler", "İletişim"].map(
-                  (text, i) => (
-                    <motion.a
-                      key={text}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 * i }}
-                      href={`#${text.toLowerCase()}`}
-                      className={`text-xl font-light ${text === "İletişim" ? "text-gold-100" : "text-white/90"}`}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {text}
-                    </motion.a>
-                  ),
-                )}
+                {[
+                  "Akademi",
+                  "Etkinlikler",
+                  "Blog",
+                  "Hakkımızda",
+                  "X Doktoru",
+                  "Uzman Bul",
+                ].map((text, i) => (
+                  <motion.a
+                    key={text}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * i }}
+                    href={
+                      text === "X Doktoru"
+                        ? "/specialist-showcase"
+                        : text === "Uzman Bul"
+                        ? "/find-specialist"
+                        : `#${text.toLowerCase()}`
+                    }
+                    className={`text-xl font-light ${text === "İletişim" ? "text-gold-100" : "text-white/90"}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {text}
+                  </motion.a>
+                ))}
               </div>
 
               {/* Mobil Giriş Butonları */}
@@ -339,7 +375,6 @@ export default function Navbar() {
                   Hasta Girişi
                 </a>
               </div>
-
             </motion.div>
           </div>
         )}
